@@ -1,4 +1,4 @@
-data: https://github.com/MMAMAR/DATA/blob/main/NATL60_GULFSTREAM_XP1_GENN002.nc # url of your test data
+data: https://github.com/MMAMAR/DATA/raw/main/NATL60_GULFSTREAM_XP1_GENN002.nc # url of your test data
 code: https://github.com/maxbeauchamp/4DVARNN-DinAE # link to the code used to generate the data (can be a notebook)
 domain: GULFSTREAM # domain
 submitter: Mohamed # Name of the submitter
