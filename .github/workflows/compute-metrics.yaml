@@ -3,11 +3,9 @@ on: [pull_request]
 jobs:
   run:
     runs-on: [ubuntu-latest]
+    container: docker://dvcorg/cml-py3:latest
     steps:
       - uses: actions/checkout@v2
-      - uses: iterative/setup-cml@v1
-        with:
-          version: latest
       - name: install mamba
         if: ${{ !env.ACT }}
         uses: mamba-org/provision-with-micromamba@main
