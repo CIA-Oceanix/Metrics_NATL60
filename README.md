@@ -6,10 +6,7 @@ This repository contains pieces of codes to submit and compare results on the SS
 
 ## Motivation
 
-The goal is to investigate how to best reconstruct sequences of Sea Surface Height (SSH) maps from partial satellite altimetry observations. This data challenge follows an _Observation System Simulation Experiment_ framework: "Real" full SSH are from a numerical simulation with a realistic, high-resolution ocean circulation model: the reference simulation. Satellite observations are simulated by sampling the reference simulation based on realistic orbits of past, existing or future altimetry satellites. A baseline reconstruction method is provided, namely optimal interpolation (see below), and some practical goals will have to be defined in this challenge such as:
-* to beat this baseline according to scores also described below and in Jupyter notebooks.
-* to build a webpage where other teams can dynamically run their method and confront their performance scores to other methods
-* to allow pangeo binder link work on a distant virtual machine with GPU capabilities to ease the reproduction of DL methods
+The goal is to investigate how to best reconstruct sequences of Sea Surface Height (SSH) maps from partial satellite altimetry observations. This data challenge follows an _Observation System Simulation Experiment_ framework: "Real" full SSH are from a numerical simulation with a realistic, high-resolution ocean circulation model: the reference simulation. Satellite observations are simulated by sampling the reference simulation based on realistic orbits of past, existing or future altimetry satellites. A baseline reconstruction method is provided, namely optimal interpolation (OI).
 
 The datasets are hosted [here](https://s3.eu-central-1.wasabisys.com/melody) with Wasabi Cloud Storage solution, see below to see how to download the public datasets.
 
@@ -32,7 +29,7 @@ To download the *daily observation* dataset, do:
 wget https://s3.eu-central-1.wasabisys.com/melody/data.nc -O   "data.nc"
 ```
 
-### Optimal Interpolation (OI)
+### Optimal Interpolation (OI)
 
 The DUACS system is an operational production of sea level products for the Marine (CMEMS)
 and Climate (C3S) services of the E.U. Copernicus program, on behalf of the CNES french space
