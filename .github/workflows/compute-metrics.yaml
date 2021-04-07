@@ -40,8 +40,8 @@ jobs:
             cat work/GULFSTREAM_nrmse_score.txt >> report.md
             echo '
             ' >> report.md
-            cml-publish work/GULFSTREAM_TS_nRMSE_nadirswot.png --md >> report.md
-            cml-publish work/GULFSTREAM_TS_nRMSE_Grad_nadirswot.png --md >> report.md
+            # cml-publish work/GULFSTREAM_TS_nRMSE_nadirswot.png --md >> report.md
+            # cml-publish work/GULFSTREAM_TS_nRMSE_Grad_nadirswot.png --md >> report.md
           fi
 
           if test -f "work/OSMOSIS_nrmse_score.txt"; then
