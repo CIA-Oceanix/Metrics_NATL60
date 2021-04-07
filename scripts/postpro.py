@@ -24,7 +24,7 @@ workpath.mkdir(exist_ok=True, parents=True)
 XP=2 # XP = 1....5
 workpath = Path("work")
 workpath.mkdir(exist_ok=True, parents=True)
-subm = 'submissions_XP'+str(XP)
+subm = 'submissions_XP3'
 submissions_files = list(Path(subm).glob('*'))
 submission_data =[]
 for sub_file in submissions_files:
@@ -51,9 +51,9 @@ for domain in sub_df.domain.drop_duplicates():
         indLon     = 200
 
     ## store all data in a list
-    GT_file               = "https://s3.eu-central-1.wasabisys.com/melody/Metrics_NATL60/Datasets/XP"+str(XP)+"/NATL60_"+domain+"_XP"+str(XP)+"_GT.nc#mode=bytes"
-    OBS_file              = "https://s3.eu-central-1.wasabisys.com/melody/Metrics_NATL60/Datasets/XP"+str(XP)+"/NATL60_"+domain+"_XP"+str(XP)+"_OBS_NADIRSWOT_obs.nc#mode=bytes"
-    OI_file               = "https://s3.eu-central-1.wasabisys.com/melody/Metrics_NATL60/Datasets/XP"+str(XP)+"/NATL60_"+domain+"_XP"+str(XP)+"_OI_NADIRSWOT_obs.nc#mode=bytes"
+    GT_file               = "https://s3.eu-central-1.wasabisys.com/melody/Metrics_NATL60/Datasets/XP2/NATL60_"+domain+"_XP2_GT.nc#mode=bytes"
+    OBS_file              = "https://s3.eu-central-1.wasabisys.com/melody/Metrics_NATL60/Datasets/XP2/NATL60_"+domain+"_XP2_OBS_NADIRSWOT_obs.nc#mode=bytes"
+    OI_file               = "https://s3.eu-central-1.wasabisys.com/melody/Metrics_NATL60/Datasets/XP2/NATL60_"+domain+"_XP2_OI_NADIRSWOT_obs.nc#mode=bytes"
     sub_files = sub_domain['data']
 
     # Reload results
@@ -61,7 +61,7 @@ for domain in sub_df.domain.drop_duplicates():
     GT      = xr.open_dataset(GT_file,decode_times=False).ssh.values
     OBS     = xr.open_dataset(OBS_file,decode_times=False).ssh.values
     OI      = xr.open_dataset(OI_file,decode_times=False).ssh.values
-    sub_ds      = [xr.open_dataset(f"{sub_file}#mode=bytes",decode_times=False).ssh.values for sub_file in sub_files]
+    sub_ds      = [xr.open_dataset(f"{sub_file}",decode_times=False).ssh.values for sub_file in sub_files]
 
     # list_data (nadir+swot)
     list_data   = [GT, OBS, OI, *sub_ds]
@@ -95,10 +95,10 @@ for domain in sub_df.domain.drop_duplicates():
         ymax = [0.3,1.]
     else:
         ymax = [0.2,1.]
-    resfile=workpath / f"{domain}_TS_nRMSE_nadirswot.png"
-    plot_nRMSE(list_data,labels_data,colors,symbols,lstyle,lwidth,lday,ymax[0],resfile,gradient=False)
-    resfile=workpath / f"{domain}_TS_nRMSE_Grad_nadirswot.png"
-    plot_nRMSE(list_data,labels_data,colors,symbols,lstyle,lwidth,lday,ymax[1],resfile,gradient=True)
+    # resfile=workpath / f"{domain}_TS_nRMSE_nadirswot.png"
+    # plot_nRMSE(list_data,labels_data,colors,symbols,lstyle,lwidth,lday,ymax[0],resfile,gradient=False)
+    # resfile=workpath / f"{domain}_TS_nRMSE_Grad_nadirswot.png"
+    # plot_nRMSE(list_data,labels_data,colors,symbols,lstyle,lwidth,lday,ymax[1],resfile,gradient=True)
 
     resfile=workpath / f"{domain}_nrmse_score.txt"
     nRMSE_scores(list_data,labels_data,resfile,id_xp=XP,gradient=False)

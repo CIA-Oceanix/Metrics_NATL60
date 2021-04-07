@@ -4,14 +4,8 @@ from Metrics_NATL60 import *
 import pandas as pd
 def nRMSE_scores(list_data,labels_data,resfile,id_xp,gradient=False):
 
-    # select only 10-day windows
-    if id_xp==1:
-        index=list(range(5,16))
-        index.extend(range(25,36))
-        index.extend(range(45,56))
-        index.extend(range(65,76))
-    if id_xp==2:
-        index = list(range(0,20))
+    print(id_xp)
+    index = list(range(0,20))
 
     GT  = list_data[0][index]
 
@@ -44,6 +38,8 @@ def nRMSE_scores(list_data,labels_data,resfile,id_xp,gradient=False):
     print(resfile)
     print(pd.DataFrame(scores).to_markdown())
     with open(resfile, 'w') as f:
-        pd.DataFrame(scores).set_index('label').to_markdown(f)
+        pd.DataFrame(
+             sorted(scores, key=lambda it: int(it['label'] == 'OI') or  it['mean_mse'], reverse=True)
+        ).set_index('label').to_markdown(f)
 
 

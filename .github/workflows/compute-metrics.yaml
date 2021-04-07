@@ -34,17 +34,20 @@ jobs:
           # Write your CML report
         run: |
           cat work/submission.md >> report.md
-          echo '\n\n' >> report.md
+          echo '
+          ' >> report.md
           if test -f "work/GULFSTREAM_nrmse_score.txt"; then
             cat work/GULFSTREAM_nrmse_score.txt >> report.md
-            echo '\n\n' >> report.md
-            cml-publish work/GULFSTREAM_TS_nRMSE_nadirswot.png --md >> report.md
-            cml-publish work/GULFSTREAM_TS_nRMSE_Grad_nadirswot.png --md >> report.md
+            echo '
+            ' >> report.md
+            # cml-publish work/GULFSTREAM_TS_nRMSE_nadirswot.png --md >> report.md
+            # cml-publish work/GULFSTREAM_TS_nRMSE_Grad_nadirswot.png --md >> report.md
           fi
 
           if test -f "work/OSMOSIS_nrmse_score.txt"; then
             cat work/GULFSTREAM_nrmse_score.txt >> report.md
-            echo '\n\n' >> report.md
+            echo '
+            ' >> report.md
             cml-publish work/GULFSTREAM_TS_nRMSE_nadirswot.png --md >> report.md
             cml-publish work/GULFSTREAM_TS_nRMSE_Grad_nadirswot.png --md >> report.md
           fi
