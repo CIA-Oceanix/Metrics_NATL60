@@ -95,10 +95,10 @@ for domain in sub_df.domain.drop_duplicates():
         ymax = [0.3,1.]
     else:
         ymax = [0.2,1.]
-    resfile=workpath / f"{domain}_TS_nRMSE_nadirswot.png"
-    plot_nRMSE(list_data,labels_data,colors,symbols,lstyle,lwidth,lday,ymax[0],resfile,gradient=False)
-    resfile=workpath / f"{domain}_TS_nRMSE_Grad_nadirswot.png"
-    plot_nRMSE(list_data,labels_data,colors,symbols,lstyle,lwidth,lday,ymax[1],resfile,gradient=True)
+    # resfile=workpath / f"{domain}_TS_nRMSE_nadirswot.png"
+    # plot_nRMSE(list_data,labels_data,colors,symbols,lstyle,lwidth,lday,ymax[0],resfile,gradient=False)
+    # resfile=workpath / f"{domain}_TS_nRMSE_Grad_nadirswot.png"
+    # plot_nRMSE(list_data,labels_data,colors,symbols,lstyle,lwidth,lday,ymax[1],resfile,gradient=True)
 
     resfile=workpath / f"{domain}_nrmse_score.txt"
     nRMSE_scores(list_data,labels_data,resfile,id_xp=XP,gradient=False)
