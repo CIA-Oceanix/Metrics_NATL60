@@ -21,10 +21,10 @@ from ruamel import yaml
 workpath = Path("work")
 workpath.mkdir(exist_ok=True, parents=True)
 
-XP=3 # XP = 1....5
+XP=2 # XP = 1....5
 workpath = Path("work")
 workpath.mkdir(exist_ok=True, parents=True)
-subm = 'submissions_XP'+str(XP)
+subm = 'submissions_XP3'
 submissions_files = list(Path(subm).glob('*'))
 submission_data =[]
 for sub_file in submissions_files:
