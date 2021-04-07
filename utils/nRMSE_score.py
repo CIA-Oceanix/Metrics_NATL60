@@ -44,6 +44,8 @@ def nRMSE_scores(list_data,labels_data,resfile,id_xp,gradient=False):
     print(resfile)
     print(pd.DataFrame(scores).to_markdown())
     with open(resfile, 'w') as f:
-        pd.DataFrame(scores).set_index('label').to_markdown(f)
+        pd.DataFrame(
+             sorted(scores, key=lambda it: int(it['label'] == 'OI') or  it['mean_mse'], reverse=True)
+        ).set_index('label').to_markdown(f)
 
 
