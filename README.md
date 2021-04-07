@@ -62,15 +62,12 @@ Last, for reconstruction methods that need a spin-up, the **observations** can b
 | Experiments                                    |    mean_mse |   mean_rmse |   5_perc_rmse |   95_perc_rmse |
 |:-----------------------------------------|------------:|------------:|--------------:|---------------:|
 | OI (nadir+swot)                          | 0.0012679   |   0.0899977 |     0.0725104 |      0.101496  |
-| Grad GENN XP2(Ronan)-6                   | 0.000642739 |   0.063333  |     0.0469289 |      0.0798195 |
-| Grad GENN XP2(Ronan)-1                   | 0.000716767 |   0.0674674 |     0.0542147 |      0.0794513 |
-| Grad GENN XP2(Ronan)-3                   | 0.000504638 |   0.0565214 |     0.0437335 |      0.0674599 |
-| Grad GENN XP2(Ronan)-2                   | 0.000483263 |   0.0554249 |     0.0436022 |      0.0654989 |
-| inpainting nadir+swot lag 5 XP2          | 0.00348637  |   0.15023   |     0.143916  |      0.157372  |
-| Grad GENN XP2(Ronan)-5                   | 0.000640309 |   0.0633805 |     0.0480433 |      0.0784932 |
-| Grad genn nadir+swot lag 0 XP2 (Mohamed) | 0.000937123 |   0.0768084 |     0.0572351 |      0.0934432 |
+| 4DVarNN-LSTM-L2-Nadir+SWOT+SST                   | 0.000483263 |   0.0554249 |     0.0436022 |      0.0654989 |
+| 4DVarNN-LSTM-L1-Nadir+SWOT+SST                  | 0.000504638 |   0.0565214 |     0.0437335 |      0.0674599 |
+| 4DVarNN-LSTM-L2-Nadir+SWOT                   | 0.000640309 |   0.0633805 |     0.0480433 |      0.0784932 |
+| 4DVarNN-LSTM-L1-Nadir+SWOT                   | 0.000642739 |   0.063333  |     0.0469289 |      0.0798195 |
 
-![](https://asset.cml.dev/afb3def58e7b36feb6de6c98f9622de700057838?cml=png)
+
 
 ## How to submit new results:
 
