@@ -57,6 +57,10 @@ Last, for reconstruction methods that need a spin-up, the **observations** can b
 
 ![Data Sequence](figs/DC-data_availability_2.png)
 
+* *Experience n.3*. 
+
+![Data Sequence](figs/DC-data_availability_3.png)
+
 ## Submission Results
 
 | Experiments                                    |    mean_mse |   mean_rmse |   5_perc_rmse |   95_perc_rmse |
