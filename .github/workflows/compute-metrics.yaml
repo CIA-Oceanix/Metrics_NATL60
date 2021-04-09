@@ -2,9 +2,12 @@ name: Compute metrics
 on: [pull_request]
 jobs:
   run:
-    runs-on: [ubuntu-latest]
+    runs-on: [ubuntu-16.04]
     steps:
       - uses: actions/checkout@v2
+      - uses: iterative/setup-cml@v1
+        with:
+          version: latest
       - name: install mamba
         if: ${{ !env.ACT }}
         uses: mamba-org/provision-with-micromamba@main
@@ -24,9 +27,6 @@ jobs:
         run: |
           # Your ML workflow goes here
           PYTHONPATH=. python  scripts/postpro.py
-      - uses: iterative/setup-cml@v1
-        with:
-          version: latest
       - name: submit report
         shell: bash -l {0}
         env:
